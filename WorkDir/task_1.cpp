@@ -27,7 +27,7 @@ int main(int argc, char** argv)
             (new_symb == ' ' || new_symb == '\t' || new_symb == '\n' || new_symb == '\0'))
         {
             w_num++; // Increment words number
-            cout << "Increment:" << prev_symb << " prev:" << new_symb << endl;
+//             cout << "Increment: prev: " << prev_symb << " new: " << new_symb << endl;
         }
         prev_symb = new_symb;
         i++;

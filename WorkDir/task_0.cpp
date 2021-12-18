@@ -1,5 +1,5 @@
 #include <iostream>
-#include "omp.h"
+#include "omp.h" // no need now
 
 using namespace std;
 

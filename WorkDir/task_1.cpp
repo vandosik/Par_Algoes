@@ -50,13 +50,9 @@ int main(int argc, char** argv)
 
             auto duration = chrono::duration_cast<chrono::microseconds>(time_stop - time_start); // calculate the duration
 
-            cout << "Number of threads:" << thread_num << " Execution time (in microseconds): " <<  duration.count() << endl;
+            cout << "Number of threads:" << thread_num << " Execution time (in microseconds): " <<  duration.count() << " Found maxval: " << max_val << endl;
         }
-        // Print elements if pass 2nd arg and our array is not very big
-        if (argc > 2 and vec_size <= 10)
-        {
-            cout<<"Found maxval: " << max_val << endl;
-        }
+
     }
     else
     {

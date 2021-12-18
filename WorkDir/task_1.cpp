@@ -29,12 +29,10 @@ int main(int argc, char** argv)
             cout << endl;
         }
 
-        double max_val = -1.0; // as all the elements in array between 0 to 1
-
-        // iterate over the number of threads
+        // Iterate over different numbers of of threads
         for(auto thread_num = 1; thread_num < 11; thread_num++)
         {
-
+            double max_val = -1.0; // as all the elements in array between 0 to 1
             auto time_start = chrono::high_resolution_clock::now(); // get the current time
 
 #pragma omp parallel for num_threads(thread_num) reduction (max:max_val)

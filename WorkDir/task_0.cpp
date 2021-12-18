@@ -25,8 +25,8 @@ int main(int argc, char** argv)
         new_symb = string[i];
 
         // Check the end of symbols and begining og separators
-        if (!(prev_symb == ' ' || prev_symb == '\t' || prev_symb == '\n') &&
-            (new_symb == ' ' || new_symb == '\t' || new_symb == '\n' || new_symb == '\0'))
+        if (not(prev_symb == ' ' or prev_symb == '\t' or prev_symb == '\n') and
+            (new_symb == ' ' or new_symb == '\t' or new_symb == '\n' or new_symb == '\0'))
         {
             w_num++; // Increment words number
 //             cout << "Increment: prev: " << prev_symb << " new: " << new_symb << endl;

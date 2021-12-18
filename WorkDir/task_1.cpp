@@ -28,10 +28,12 @@ int main(int argc, char** argv)
             }
             cout << endl;
         }
+
+        double max_val = -1.0; // as all the elements in array between 0 to 1
+
         // iterate over the number of threads
         for(auto thread_num = 1; thread_num < 11; thread_num++)
         {
-            double max_val = -1.0; // as all the elements in array between 0 to 1
 
             auto time_start = chrono::high_resolution_clock::now(); // get the current time
 
@@ -49,13 +51,11 @@ int main(int argc, char** argv)
             auto duration = chrono::duration_cast<chrono::microseconds>(time_stop - time_start); // calculate the duration
 
             cout << "Number of threads:" << thread_num << " Execution time (in microseconds): " <<  duration.count() << endl;
-
-            // Print elements if pass 2nd arg and our array is not very big
-            if (argc > 2 and vec_size <= 10)
-            {
-                cout<<"Found maxval: " << max_val << endl;
-
-            }
+        }
+        // Print elements if pass 2nd arg and our array is not very big
+        if (argc > 2 and vec_size <= 10)
+        {
+            cout<<"Found maxval: " << max_val << endl;
         }
     }
     else

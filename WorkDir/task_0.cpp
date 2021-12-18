@@ -7,6 +7,7 @@ int main(int argc, char** argv)
 {
     unsigned w_num = 0;
 
+
     if (argc < 2)
     {
         cout << "No argument passed" << endl;
@@ -19,10 +20,11 @@ int main(int argc, char** argv)
 
     prev_symb = new_symb = string[0];
 
-    while (new_symb != '\0') // End of line
+    while (new_symb != '\0') // Check End of line
     {
         new_symb = string[i];
 
+        // Check the end of symbols and begining og separators
         if (!(prev_symb == ' ' || prev_symb == '\t' || prev_symb == '\n') &&
             (new_symb == ' ' || new_symb == '\t' || new_symb == '\n' || new_symb == '\0'))
         {

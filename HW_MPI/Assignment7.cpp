@@ -60,11 +60,18 @@ int main(int argc, char **argv)
     {
         cout << "Root process: " << proc_rank << ": local sum = " << sum  << endl;
         cout << "Root process: " << proc_rank << " resulting SUM = " << global_sum << endl;
+        // Release allocated memory
+        delete vec_a;
+        delete vec_b;
     }
     else
     {
         cout << "Process: " << proc_rank << ": local sum = " << sum  << endl;
     }
+
+    // Delete allocated memory
+    delete vec_a_part;
+    delete vec_b_part;
 
     // Finalize MPI
     MPI_Finalize();

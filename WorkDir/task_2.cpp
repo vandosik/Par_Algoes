@@ -127,9 +127,9 @@ int main(int argc, char** argv)
             #pragma omp parallel for num_threads(thread_num)
             for (int i = 0; i < rows_num; i++)
             {
-                for (int k = 0; k < rows_num; k++)
+                for (int j = 0; j < rows_num; j++)
                 {
-                    for (int j = 0; j < cols_num; j++)
+                    for (int k = 0; k < cols_num; k++)
                     {
                         matrix_c[i][j] += matrix_a[i][k] * matrix_b[k][j];
                     }
@@ -142,10 +142,13 @@ int main(int argc, char** argv)
 
             if (thread_num == MAX_THREADS_NUM)
             {
-                cout << "Print result matrix" << endl;
-                cout << "-------------------------------------------------------------------" << endl;
-                print_matrix(matrix_c, rows_num, rows_num);
-                cout << "-------------------------------------------------------------------" << endl;
+                if (rows_num * cols_num <= 25)
+                {
+                    cout << "Print result matrix" << endl;
+                    cout << "-------------------------------------------------------------------" << endl;
+                    print_matrix(matrix_c, rows_num, rows_num);
+                    cout << "-------------------------------------------------------------------" << endl;
+                }
             }
 
             release_matrix(matrix_c, rows_num, rows_num);

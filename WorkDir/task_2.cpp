@@ -7,7 +7,7 @@
 #define MAX_THREADS_NUM         10
 
 using namespace std;
-using namespace std::chrono;
+using namespace chrono;
 
 // function to generate random matrices
 double** generate_random_matrix(int rows, int columns)
@@ -332,6 +332,7 @@ int main(int argc, char** argv)
             printf("Number of threads: %d, Time (in microseconds): %lld, Efficiency: %f\n", i + 1, time_array[i], float(time_array[i])/float(sum_time));
         }
 
+        // Free allocated memory
         release_matrix(matrix_a, rows_num, cols_num);
         release_matrix(matrix_b, cols_num, rows_num);
 

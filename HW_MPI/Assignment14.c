@@ -34,7 +34,7 @@ int main(int argc, char **argv)
         a[i] = i + rank + 1;
     }
 
-    cout << "Process " << rank << ": a filled with: " << a[0] << endl;
+    cout << "Process " << rank << ": a[0] filled with: " << a[0] << endl;
 
     MPI_Op_create(&max_of_pair, 1, &op);
     MPI_Reduce(a, b, VEC_SIZE, MPI_INT, op , 0, MPI_COMM_WORLD);
